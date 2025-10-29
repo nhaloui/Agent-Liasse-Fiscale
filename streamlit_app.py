@@ -1029,7 +1029,7 @@ if uploaded_files:
                             k,
                             highlight
                         )
-                        st.image(img, use_column_width=True)
+                        st.image(img, use_container_width=True)
                     
                     with st.expander("📊 Tableau complet"):
                         import pandas as pd
@@ -1161,32 +1161,15 @@ if uploaded_files:
                 st.info("💡 Uploadez un modèle Excel pour générer le fichier")
 
 else:
-    st.info("👆 Uploadez vos PDFs (3 max)")
+    st.info("Uploadez et Générez")
     
     with st.expander("📖 Mode d'emploi"):
         st.markdown("""
-        ### 🎯 Fonctionnalités
-        - ✅ **Multi-PDF** : 3 PDFs max (3 années)
-        - ✅ Détection auto du formulaire
-        - ✅ Extraction montants + négatifs
-        - ✅ **Génération Excel** multi-années
-        
         ### 📊 Workflow
-        1. Upload 3 PDFs (1 par année)
+        1. Upload 3 PDF (1 par année)
         2. Upload template Excel
         3. Debug visuel (sélectionner PDF)
-        4. Clic "Extraire tous les PDFs"
+        4. Clic "Générez"
         5. Télécharger Excel généré
-        
-        ### 📋 Formats négatifs
-        - `(123)` → `-123`
-        - `-123` → `-123`
-        
-        ### 📂 Excel
-        - **G** = Année récente
-        - **H** = Année intermédiaire  
-        - **I** = Année ancienne
-        - **Bilan** : Form 2050 + 2051
-        - **CR** : Forms 2052 + 2053
         """)
 
