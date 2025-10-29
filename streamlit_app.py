@@ -1078,10 +1078,8 @@ if uploaded_files:
                 year_match = re.search(r'(\d{4})', filename)
                 if year_match:
                     detected_year = int(year_match.group(1))
-                    st.success(f"✅ Année détectée depuis le nom: **{detected_year}**")
                 else:
                     detected_year = None
-                
                 with pdfplumber.open(io.BytesIO(pdf_info['bytes'])) as pdf:
                     pdf_extraction = {}
                     
@@ -1119,9 +1117,7 @@ if uploaded_files:
                         )
                     
                     all_extractions[detected_year] = pdf_extraction
-                    st.success(f"✅ {len(pdf_extraction)} codes extraits pour {detected_year}")
             
-            st.markdown("### 📋 Résumé")
             for year in sorted(all_extractions.keys()):
                 st.info(f"**{year}** : {len(all_extractions[year])} codes")
             
