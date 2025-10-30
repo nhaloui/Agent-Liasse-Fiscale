@@ -862,10 +862,10 @@ model_file = st.file_uploader(
 if uploaded_files:
     # Limiter à 3 PDFs
     if len(uploaded_files) > 3:
-        st.error("❌ Maximum 3 PDFs autorisés")
+        st.error("❌ Maximum 3 PDF autorisés")
         uploaded_files = uploaded_files[:3]
     
-    st.success(f"✅ {len(uploaded_files)} PDF(s) chargé(s)")
+    st.success(f"✅ {len(uploaded_files)} PDF chargé(s)")
     
     # Charger tous les PDFs
     pdf_data = []
@@ -889,7 +889,7 @@ if uploaded_files:
     
     if show_debug:
         st.markdown("---")
-        st.markdown("### 🔍 Debug visuel (prévisualisation page + réglage colonne)")
+        st.markdown("### 🔍 Afficher la visualisation de la liasse fiscale")
 
         # Sélection du PDF à visualiser
         pdf_names = [f"{p['name']} ({p['total_pages']} pages)" for p in pdf_data]
@@ -1158,17 +1158,17 @@ if uploaded_files:
                         st.error(f"❌ Erreur: {str(e)}")
             
             elif not model_file:
-                st.info("💡 Uploadez un modèle Excel pour générer le fichier")
+                st.info("💡 Upload un modèle Excel pour générer le fichier")
 
 else:
-    st.info("Uploadez et Générez")
+    st.info("Upload et Générez")
     
     with st.expander("📖 Mode d'emploi"):
         st.markdown("""
-        ### 📊 Workflow
+        ### 🔧 Workflow
         1. Upload 3 PDF (1 par année)
         2. Upload template Excel
-        3. Debug visuel (sélectionner PDF)
+        3. Possibilité d'afficher la visualition (réglage manuel)
         4. Clic "Générez"
         5. Télécharger Excel généré
         """)
