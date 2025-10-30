@@ -883,13 +883,13 @@ if uploaded_files:
             })
 
     show_debug = st.checkbox(
-    "🔍 Afficher le debug visuel (prévisualisation et réglage colonne montants)",
+    "🔍 Afficher la visualition des liasses fiscale (réglage manuel)",
     value=False)
 
     
     if show_debug:
         st.markdown("---")
-        st.markdown("### 🔍 Afficher la visualisation de la liasse fiscale")
+        st.markdown("### Visualisation de la liasse fiscale")
 
         # Sélection du PDF à visualiser
         pdf_names = [f"{p['name']} ({p['total_pages']} pages)" for p in pdf_data]
@@ -1064,12 +1064,11 @@ if uploaded_files:
     
     # ==================== EXTRACTION COMPLÈTE + EXCEL ====================
     st.markdown("---")
-    st.markdown("### 📊 Extraction complète vers Excel")
+    st.markdown("### Extraction complète vers Excel")
     
-    if st.button("Generez 🚀", type="primary"):
+    if st.button("Générez 🚀", type="primary"):
         with st.spinner("Extraction en cours..."):
             all_extractions = {}  # {year: {code: value}}
-            
             for pdf_info in pdf_data:
                 st.info(f"📄 Traitement: **{pdf_info['name']}**")
                 
